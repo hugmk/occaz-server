@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: occaz-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: occaz-backend
+  template:
+    metadata:
+      labels:
+        app: occaz-backend
+    spec:
+      containers:
+        - image: hugmk/occaz-backend:latest
+          imagePullPolicy: IfNotPresent
+          name: occaz-backend
+      restartPolicy: Always

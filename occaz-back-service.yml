@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: occaz-backend
+spec:
+  ports:
+    - nodePort: 31281
+      port: 3000
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app: occaz-backend
+  type: NodePort
+  
